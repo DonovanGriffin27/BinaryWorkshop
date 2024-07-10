@@ -3,7 +3,7 @@
 
 ### Introduction
 The binary we developed a solution for was the 'time' file from the nightmare repository created by 'guyinatuxedo'. 
-The deatails of the 'time' file include
+The deatails of the 'time' file include:
 - 64 bit binary
 - Prompts user to enter guess a number
 - Reads the user's input
