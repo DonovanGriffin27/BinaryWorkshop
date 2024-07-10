@@ -15,7 +15,7 @@ From the understanding that the **'time'** file is essentially a number guessing
 ``` python
 #!/usr/bin/env python
 from ctypes import CDLL
-from  pwn import  *
+from pwn import  *
 
 io  = process('./time')
 
