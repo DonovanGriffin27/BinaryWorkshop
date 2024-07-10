@@ -10,9 +10,10 @@ The deatails of the 'time' file include
 - Based off user input, tells the user if their guess was valid
 
 ### Solution Process
-      From the understanding that the 'time' file is essentially a number guessing game, we then looked at the main function in Ghidra which is an open source reverse engineering tool developed by the National Security Agency of the United States. From looking at the 'main' function we saw that the rand function is what supplies the program with a random number. Then based off user input, the program performs a conditional operation to see if the random generated number matches the user's input. Also from looking at the source code, we saw that the programs seed for a random number is based on the current time. With all the knowledge gained from looking at the source code we developed a python program that serves as a solution.
+From the understanding that the 'time' file is essentially a number guessing game, we then looked at the main function in Ghidra which is an open source reverse engineering tool developed by the National Security Agency of the United States. From looking at the 'main' function we saw that the rand function is what supplies the program with a random number. Then based off user input, the program performs a conditional operation to see if the random generated number matches the user's input. Also from looking at the source code, we saw that the programs seed for a random number is based on the current time. With all the knowledge gained from looking at the source code we developed a python program that serves as a solution.
 
-'''#!/usr/bin/env python
+``` python
+#!/usr/bin/env python
 from ctypes import CDLL
 
 
@@ -33,9 +34,8 @@ io.sendline(r)
 display = io.recvline()
 print(display)
 print(io.recvline())
-print(io.recvline())
-'''
+print(io.recvline())```
 
 
-      The program starts off by passing a python enviorment then importing a C Dynamic Link Library and pwntools. Then from declaring our io variable and C  library variable we were able include the time file in our solution file and also get the current time to match the seed. We then created a variable that has a value that matches the current time for my program it was decalred as 't' we then created a random integer variable that creates a random number from the srand() function which has the time variable ('t') as the argument. Then once this operation was performed we creted our rand() function variable which for my program was declared as 'r' after that we received that line which is able to be done because of the pwntools import. We then used recieve line until the part of the program that asks the user to enter a guessing number. Once that portion fo teh code occurs it was then time to send the rand() function variable we createde earlier. This was done by using the integer place holder to send the variable. The last steps were to print the last parts of the source code. From running the solution python file we were able to see that the random number variable we created matched the random number generated. 
+The program starts off by passing a python enviorment then importing a C Dynamic Link Library and pwntools. Then from declaring our io variable and C  library variable we were able include the time file in our solution file and also get the current time to match the seed. We then created a variable that has a value that matches the current time for my program it was decalred as 't' we then created a random integer variable that creates a random number from the srand() function which has the time variable ('t') as the argument. Then once this operation was performed we creted our rand() function variable which for my program was declared as 'r' after that we received that line which is able to be done because of the pwntools import. We then used recieve line until the part of the program that asks the user to enter a guessing number. Once that portion fo teh code occurs it was then time to send the rand() function variable we createde earlier. This was done by using the integer place holder to send the variable. The last steps were to print the last parts of the source code. From running the solution python file we were able to see that the random number variable we created matched the random number generated. 
         
