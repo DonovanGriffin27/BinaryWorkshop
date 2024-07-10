@@ -1,4 +1,4 @@
-# Time Solution
+# 'time' Solution
 ### This document will explain the steps that were taken to develop a solution for the guessing game program
 
 ### Introduction
