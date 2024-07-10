@@ -12,14 +12,9 @@ ran_int = int((libc.srand(t)))
 r = libc.rand()
 io.recvline()
 
-#print("Random number is: %d " % (r))
-#io.sendline('echo Hello, world')
-
 print(io.recvuntil("Enter your number: "))
 io.sendline(b'%d' % r)
 display = io.recvline()
 print(display)
 print(io.recvline())
 print(io.recvline())
-
-
