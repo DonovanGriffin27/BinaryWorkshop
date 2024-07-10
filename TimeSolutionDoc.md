@@ -3,7 +3,7 @@
 
 ### Introduction
 The binary we developed a solution for was the 'time' file from the nightmare repository created by 'guyinatuxedo'. 
-The deatails of the 'time' file include:
+The details of the 'time' file include:
 - 64 bit binary
 - Prompts user to enter guess a number
 - Reads the user's input
@@ -15,9 +15,9 @@ From the understanding that the **'time'** file is essentially a number guessing
 ``` python
 #!/usr/bin/env python
 from ctypes import CDLL
+import pwn tools *
 
-
-io   = process('./time')
+io  = process('./time')
 
 libc = CDLL("libc.so.6")
 t = int(libc.time(0))
@@ -25,9 +25,6 @@ print("Current time is: %d "  % (t))
 ran_int = int((libc.srand(t)))
 r = libc.rand()
 io.recvline()
-
-#print("Random number is: %d " % (r))
-#io.sendline('echo Hello, world')
 
 print(io.recvuntil("Enter your number: "))
 io.sendline(r)
@@ -37,11 +34,9 @@ print(io.recvline())
 print(io.recvline())
 ```
 
-
 - The program starts off by passing a python enviorment then importing a C Dynamic Link Library and pwntools.
 - Then from declaring our io variable and C library variable we were able **include the 'time' file in our solution file and also get the current time to match the seed.**
 - We then created a variable that has a value that matches the current time for my program it was decalred as **'t'** next a random integer variable was created thhat generates a random number from the **srand()** function which has the time variable **('t') as the argument.**
 - Then once this operation was performed we creted our **rand()** function variable which for my program was declared as **'r'** after that we received that line which is able to be done because of the pwntools import.
 - We then used recieve line until the part of the program that asks the user to enter a guessing number. **Once that portion of the code occurs it was then time to send the rand() function variable we created earlier.** This was done by using the integer place holder to send the variable.
-- The last steps were to print the last parts of the source code. From running the solution python file we were able to see that the random number variable we created matched the random number generated. 
-        
+- The last steps were to print the last parts of the source code. From running the solution python file we were able to see that the random number variable we created matched the random number generated.         
