@@ -35,7 +35,7 @@ print(io.recvline())
 ```
 
 - The program starts off by passing a python enviorment then importing a C Dynamic Link Library and pwntools.
-- Then from declaring our io variable and C library variable we were able **include the 'time' file in our solution file and also get the current time to match the seed.**
+- Then from declaring our io variable and C library variable we were able to  **include the 'time' file in our solution file and also get the current time to match the seed.**
 - We then created a variable that has a value that matches the current time for my program it was decalred as **'t'** next a random integer variable was created thhat generates a random number from the **srand()** function which has the time variable **('t') as the argument.**
 - Then once this operation was performed we creted our **rand()** function variable which for my program was declared as **'r'** after that we received that line which is able to be done because of the pwntools import.
 - We then used recieve line until the part of the program that asks the user to enter a guessing number. **Once that portion of the code occurs it was then time to send the rand() function variable we created earlier.** This was done by using the integer place holder to send the variable.
