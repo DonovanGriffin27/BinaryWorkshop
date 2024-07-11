@@ -19,7 +19,7 @@ babypwn.c: C source, ASCII text
 ```
 
 ## Possible Vulnerabilities
-- The character array is initialized as 32 bits but the input is reading 64 bits.
+- The character array is initialized as 32 bites but the input is reading 64 bites.
 - The check variable was never initialized but it is being compared.
 - There is a fixed memory adress.
 # Errors from the debug
