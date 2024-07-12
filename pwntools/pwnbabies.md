@@ -72,7 +72,7 @@ if (name.check == 0x41414141) {
 The **vulnerable function** is the **'fgets()'** because at the start of the program the chracter arrays is to store **32** bites however, the **'fgets()'** function is reading **64 bites**. This will cause  a **BUFFER OVERFLOW**.
 
 ## Exploitation Procedure
-To exploit this vulnerability, weknew we had to **overwrate 'name.check'**. 0x41414141 dislpays a long series of the letter **'A'** so we simply entered a **'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'** when the program asked for a name. This cause the message in the **'flag.txt' to successfully display**.
+To exploit this vulnerability, weknew we had to **overwrate 'name.check'**. 0x41414141 dislpays a long series of the letter **'A'** so we simply entered **'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'** when the program asked for a name. This cause the message in the **'flag.txt' to successfully display** because our input was longer than **32 characters** .
 
 
 
