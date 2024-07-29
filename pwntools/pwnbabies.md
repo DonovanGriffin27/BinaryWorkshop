@@ -88,9 +88,9 @@ gdb.attach(p, '''continue''')
  
 p.interactive()
 ```
-As shown **aboive**, the source code the **pwnsol.py** file begins by accessing the **babypwn** file then attaches a **gdb degugger** which allowed us to see what was going on inside of our program. Now the next time the **babypwn** file is ran, our **flag.txt** file will appear.
+As shown **above**, the source code the **pwnsol.py** file begins by accessing the **babypwn** file then attaches a **gdb degugger** which allowed us to see what was going on inside of our program. Now the next time the **babypwn** file is ran, our **flag.txt** file will appear.
 
 ### 'flag.txt file'
 ```
-his is the flag! pwntools!
+This is the flag! pwntools!
 ```
