@@ -3,7 +3,7 @@
 ## Bad Seed Vulnerabilities
 
 **Bad seed vulnerabilities** are **weaknesses** that come from **malicous** or compromised prelimary data or settings.
-## #Why they are bad
+## Why they are bad
 - Data Breaches
 - DoS Attacks
 - Atlered Data
@@ -16,9 +16,9 @@ A team of European and American mathematicians and cryptographers have discovere
 
 Netscape Communications has been at the forefront of the effort to integrate cryptographic techniques into Web servers and browsers. Netscape's Web browser supports the Secure Sockets Layer (SSL), a cryptographic protocol developed by Netscape to provide secure Internet transactions. Given the popularity of Netscape's browser and the widespread use of its cryptographic protocol on the Internet, we decided to study Netscape's SSL implementation in detail.
 
-## #The key-generation algorithm, also reverse-engineered from Netscape's browser. An attacker who can guess the PRNG seed value can easily determine the encryption keys used in Netscape's secure transactions.
+## The key-generation algorithm, also reverse-engineered from Netscape's browser. An attacker who can guess the PRNG seed value can easily determine the encryption keys used in Netscape's secure transactions.
 
-'''
+```
 RNG_GenerateRandomBytes()
      x = MD5(seed);
      seed = seed + 1;
@@ -32,7 +32,7 @@ RNG_GenerateRandomBytes()
      tmp = RNG_GenerateRandomBytes();
      challenge = RNG_GenerateRandomBytes(); 
      secret_key = RNG_GenerateRandomBytes();
-'''
+```
 
 Unfortunately for Netscape, U.S. regulations prohibit the export of products incorporating strong cryptography. In order to distribute an international version of its browser overseas, Netscape had to weaken the encryption scheme to use keys of just 40 bits, leaving only a million million possible key values. That may sound like a lot of numbers to try, but several people (David Byers, Eric Young, Damien Doligez, Piete Brooks, Andrew Roos, Adam Back, Andy Brown and many others) have been able to try every possible key and recover SSL- encrypted data in as few as 30 hours using spare CPU cycles from many machines. Since nearly all Netscape browsers in use are the free international version, the success of this attack demonstrates a fundamental vulnerability in Netscape that cannot be repaired under current export regulations.
 
