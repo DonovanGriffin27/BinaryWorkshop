@@ -1,2 +1,2 @@
 # BinaryWorkshop
-Workshop covering binaries
+Binary Exploitation Project
