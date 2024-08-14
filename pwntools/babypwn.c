@@ -40,8 +40,7 @@ int main(void)
   printf("But I don't worry, I write perfect code :)\n");
   sleep(2);
 
-  if (name.check == 0x41414141) {
-	// this is checking for all As
+  if (name.check == 0x41414141){
     get_flag();
   }
 
